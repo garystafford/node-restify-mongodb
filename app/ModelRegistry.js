@@ -1,22 +1,18 @@
-var mongoose = require('mongoose');
 var ModelTypes = require('./ModelTypes');
+var Widget = require('./models/Widget');
 
-var Item = require('./models/Item');
-
-exports.createModelInstance = function(modelType, data) {
-	switch(modelType) {
-		case ModelTypes.ITEM:
-			return new Item(data);
-			break;
-		default:
-	}
+exports.createModelInstance = function (modelType, data) {
+  switch (modelType) {
+    case ModelTypes.WIDGET:
+      return new Widget(data);
+    default:
+  }
 };
 
-exports.getModel = function(modelType) {
-	switch(modelType) {
-		case ModelTypes.ITEM:
-			return Item;
-			break;
-		default:
-	}
-}
+exports.getModel = function (modelType) {
+  switch (modelType) {
+    case ModelTypes.WIDGET:
+      return Widget;
+    default:
+  }
+};

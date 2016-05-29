@@ -1,16 +1,14 @@
 var mongoose = require('mongoose');
-var config = require('./config');
-
+var config = require('./../config/config');
 var ModelRegistry = require('./ModelRegistry');
 
 var db;
 
 exports.init = function() {
 	var mongoUrl = _getMongoUrl();
-
 	mongoose.connect(mongoUrl);
 	db = mongoose.connection;
-}
+};
 
 function _getMongoUrl() {
 	var base_url = config.db.base_url;
@@ -27,7 +25,7 @@ exports.modelCreate = function(modelType, modelData) {
 			if(err) throw err;
 		});
 	}
-}
+};
 
 exports.modelQuery = function(modelType, conditions, fieldsStr, callback) {
 	var model = ModelRegistry.getModel(modelType);
@@ -47,4 +45,4 @@ exports.modelQuery = function(modelType, conditions, fieldsStr, callback) {
 			});
 		});
 	}
-}
+};

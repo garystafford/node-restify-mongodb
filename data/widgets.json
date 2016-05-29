@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Reflupper",
+    "color": "Red",
+    "size": "Large",
+    "inventory": 25
+  },
+  {
+    "name": "Voonex",
+    "color": "Green",
+    "size": "Medium",
+    "inventory": 50
+  },
+  {
+    "name": "Jukelox",
+    "color": "Blue",
+    "size": "Small",
+    "inventory": 75
+  },
+  {
+    "name": "Groopster",
+    "color": "Yellow",
+    "size": "Large",
+    "inventory": 100
+  },
+  {
+    "name": "Fapster",
+    "color": "Orange",
+    "size": "Medium",
+    "inventory": 5
+  },
+  {
+    "name": "Chaintwist",
+    "color": "Purple",
+    "size": "Tiny",
+    "inventory": 15
+  },
+  {
+    "name": "Glozzom",
+    "color": "Red",
+    "size": "Huge",
+    "inventory": 35
+  },
+  {
+    "name": "Chaintwist",
+    "color": "Blue",
+    "size": "Medium",
+    "inventory": 55
+  },
+  {
+    "name": "Zapster",
+    "color": "Green",
+    "size": "Tiny",
+    "inventory": 65
+  },
+  {
+    "name": "Pentwist",
+    "color": "Yellow",
+    "size": "Huge",
+    "inventory": 95
+  }
+]

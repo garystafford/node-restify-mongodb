@@ -1,0 +1,15 @@
+{
+  "name": "js",
+  "version": "0.1.0",
+  "description": "",
+  "author": "",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "grunt-mongoimport": "^0.1.7",
+    "keymirror": "^0.1.1",
+    "mongoose": "^4.4.19",
+    "restify": "^4.1.0"
+  }
+}

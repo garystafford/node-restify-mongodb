@@ -3,10 +3,12 @@
 var restify = require('restify');
 var bunyan = require('bunyan');
 var glob = require('glob');
+var path = require('path');
 var mongoose = require('mongoose');
-var config = require(__dirname + '/config/config');
-var models = require(__dirname + '/app/models/');
-var routes = require(__dirname + '/app/routes/');
+
+var config = require(path.join(__dirname, '/config/config'));
+var models = require(path.join(__dirname, '/app/models/'));
+var routes = require(path.join(__dirname, '/app/routes/'));
 
 var db_url = 'mongodb://' + config.db.host + ':' + config.db.port + '/' + config.db.name;
 mongoose.connect(db_url);
@@ -94,7 +96,7 @@ models();
 routes(server);
 
 server.get('/', function (req, res, next) {
-  res.send('hello');
+  res.send(config.app.name);
   return next();
 });
 

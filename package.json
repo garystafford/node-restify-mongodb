@@ -16,6 +16,7 @@
     "grunt-mongoimport": "^0.1.7",
     "keymirror": "^0.1.1",
     "mongoose": "^4.4.19",
+    "mongoose-currency": "^0.2.0",
     "restify": "^4.1.0"
   },
   "devDependencies": {

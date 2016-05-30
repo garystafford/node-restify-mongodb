@@ -4,12 +4,12 @@ module.exports = function (grunt) {
   grunt.initConfig({
     "mongoimport": {
       options: {
-        "db": "node-restify-mongodb-development",
-        "host": "localhost",
+        "db": config.db.name,
+        "host": config.db.host,
         "username": "",
         "password": "",
         "collections": [{
-          "name": "items",
+          "name": "widgets",
           "file": "data/widgets.json",
           "jsonArray": true,
           "drop": true

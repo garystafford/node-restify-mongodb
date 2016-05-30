@@ -12,7 +12,8 @@ var config = {
       port: process.env.PORT || 3000
     },
     db: {
-      base_url: 'mongodb://127.0.0.1:27017/',
+      host: '127.0.0.1',
+      port: '27017',
       name: 'node-restify-mongodb-development'
     },
     log: {
@@ -28,7 +29,8 @@ var config = {
       port: process.env.PORT || 3000
     },
     db: {
-      base_url: 'mongodb://127.0.0.1:27017/',
+      host: '127.0.0.1',
+      port: '27017',
       name: 'node-restify-mongodb-test'
     },
     log: {
@@ -44,7 +46,8 @@ var config = {
       port: process.env.PORT || 3000
     },
     db: {
-      base_url: 'mongodb://127.0.0.1:27017/',
+      host: '127.0.0.1',
+      port: '27017',
       name: 'node-restify-mongodb-production'
     },
     log: {

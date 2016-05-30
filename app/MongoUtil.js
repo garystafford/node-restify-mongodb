@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var config = require('./../config/config');
+var config = require('../config/config');
 var ModelRegistry = require('./ModelRegistry');
 
 var db;
@@ -11,7 +11,7 @@ exports.init = function() {
 };
 
 function _getMongoUrl() {
-	var base_url = config.db.base_url;
+	var base_url = 'mongodb://' + config.db.host + ':' + config.db.port + '/';
 	var dbName = config.db.name;
 
 	return base_url + dbName;

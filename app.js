@@ -44,14 +44,14 @@ server.use(restify.queryParser());
 server.use(restify.gzipResponse());
 server.pre(restify.pre.sanitizePath());
 
-// CORS
-server.use(
-    function crossOrigin(req, res, next) {
-        res.header("Access-Control-Allow-Origin", "*");
-        res.header("Access-Control-Allow-Headers", "X-Requested-With");
-        return next();
-    }
-);
+// // CORS
+// server.use(
+//     function crossOrigin(req, res, next) {
+//         res.header("Access-Control-Allow-Origin", "*");
+//         res.header("Access-Control-Allow-Headers", "X-Requested-With");
+//         return next();
+//     }
+// );
 
 /*jslint unparam:true*/
 // Default error handler. Personalize according to your needs.

@@ -10,15 +10,6 @@ module.exports = function (server) {
 //     return next();
 //   });
 
-// server.get('/widgets', function (req, res, next) {
-//   Widget.find(function (err, widgets) {
-//     if (err) return console.error(err);
-//     res.json(widgets);
-//   });
-//   return next();
-// });
-// };
-
   // https://blog.openshift.com/day-27-restify-build-correct-rest-web-services-in-nodejs/
   var PATH = '/widgets';
   server.get({path: PATH, version: '0.0.1'}, findAllWidgets);
@@ -65,11 +56,12 @@ module.exports = function (server) {
       } else {
         return next(err);
       }
-    });
+    })
   }
 
+  // TODO: Not functional yet...
   function updateWidget(req, res, next) {
-    Widget.findOneAndUpdate({username: 'starlord55'}, {username: 'starlord88'}, function (err, widget) {
+    Widget.findOneAndUpdate({}, {}, function (err, widget) {
       if (!err) {
         res.send(201, widget);
         return next();

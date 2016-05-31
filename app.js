@@ -9,6 +9,7 @@ var mongoose = require('mongoose');
 var config = require(path.join(__dirname, '/config/config'));
 var models = require(path.join(__dirname, '/app/models/'));
 var routes = require(path.join(__dirname, '/app/routes/'));
+//var JSONFormatter = require(path.join(__dirname, '/app/common/JSONFormatter'));
 
 var db_url = 'mongodb://' + config.db.host + ':' + config.db.port + '/' + config.db.name;
 mongoose.connect(db_url);
@@ -17,8 +18,6 @@ var db = mongoose.connection;
 db.on('error', function () {
   throw new Error('unable to connect to database at ' + db_url);
 });
-
-// var JSONFormatter = require('./app/common/JSONFormatter');
 
 var log = bunyan.createLogger({
   name: config.log.name,
@@ -31,7 +30,7 @@ var server = restify.createServer({
   name: config.app.name,
   log: log,
   formatters: {
-// 		'application/json': JSONFormatter
+    // 'application/json': JSONFormatter
     'application/json': function (req, res, body, cb) {
       res.setHeader('Cache-Control', 'must-revalidate');
 
@@ -51,16 +50,6 @@ var server = restify.createServer({
     }
   }
 });
-
-// var models = glob.sync(__dirname + '/app/models/*.js');
-// models.forEach(function (model) {
-//   require(model);
-// });
-
-// var routes = glob.sync(__dirname + '/app/routes/*.js');
-// routes.forEach(function (route) {
-//   require(route);
-// });
 
 server.use(restify.bodyParser({mapParams: false}));
 server.use(restify.queryParser());
@@ -99,16 +88,6 @@ server.get('/', function (req, res, next) {
   res.send(config.app.name);
   return next();
 });
-
-// var Widget = require(__dirname + '/app/models/widget')
-//
-// server.get('/foo', function (req, res, next) {
-//   Widget.find(function (err, widgets) {
-//     if (err) return console.error(err);
-//     res.json(widgets);
-//     return next();
-//   });
-// });
 
 console.log('Server started.');
 server.listen(config.app.port, function () {

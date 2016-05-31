@@ -50,14 +50,15 @@ module.exports = function (server) {
   }
 
   function newWidget(req, res, next) {
-    var widget = {};
-    widget.name = req.body.name;
-    widget.color = req.body.color;
-    widget.size = req.body.size;
-    widget.price = req.body.price;
-    widget.inventory = req.body.inventory;
+    var widget = new Widget;
+    widget.product_id = req.params.product_id;
+    widget.name = req.params.name;
+    widget.color = req.params.color;
+    widget.size = req.params.size;
+    widget.price = req.params.price;
+    widget.inventory = req.params.inventory;
 
-    Widget.save(widget, function (err, success) {
+    widget.save(function (err, success) {
       if (success) {
         res.send(201, widget);
         return next();

@@ -51,7 +51,7 @@ var server = restify.createServer({
   }
 });
 
-server.use(restify.bodyParser({mapParams: false}));
+server.use(restify.bodyParser());
 server.use(restify.queryParser());
 server.use(restify.gzipResponse());
 server.pre(restify.pre.sanitizePath());
@@ -81,6 +81,7 @@ server.on('uncaughtException', function (req, res, route, err) {
 });
 
 server.on('after', restify.auditLogger({log: log}));
+
 models();
 routes(server);
 

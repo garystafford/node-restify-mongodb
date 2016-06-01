@@ -1,10 +1,11 @@
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
 require('mongoose-currency').loadType(mongoose);
+var uniqueValidator = require('mongoose-unique-validator');
+var Schema = mongoose.Schema;
 var Currency = mongoose.Types.Currency;
 
 var widgetSchema = new Schema({
-  product_id: {type: String, required: true},
+  product_id: {type: String, required: true, index: true, unique: true},
   name: {type: String, required: true},
   color: {
     type: String, required: true,
@@ -18,12 +19,12 @@ var widgetSchema = new Schema({
   inventory: {type: Number, required: true, min: 0},
 });
 
-//Transform
-widgetSchema.set('toJSON', {
-  virtuals: true
-});
+// apply the mongoose unique validator plugin to widgetSchema
+widgetSchema.plugin(uniqueValidator);
 
+// use mongoose currency to transform price
 widgetSchema.set('toJSON', {
+  virtuals: true,
   transform: function (doc, ret, options) {
     ret.price = Number(ret.price / 100).toFixed(2);
   }

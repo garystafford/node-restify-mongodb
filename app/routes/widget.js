@@ -2,14 +2,6 @@ var mongoose = require('mongoose');
 var Widget = mongoose.model('Widget');
 
 module.exports = function (server) {
-//   server.get('/widgets/count', function (req, res, next) {
-//     Widget.count(function (err, count) {
-//       if (err) return console.error(err);
-//       res.send(count.toString());
-//     });
-//     return next();
-//   });
-
   // https://blog.openshift.com/day-27-restify-build-correct-rest-web-services-in-nodejs/
   var PATH = '/widgets';
   server.get({path: PATH, version: '0.0.1'}, findAllWidgets);
@@ -18,11 +10,16 @@ module.exports = function (server) {
   server.put({path: PATH, version: '0.0.1'}, updateWidget);
   server.del({path: PATH + '/:product_id', version: '0.0.1'}, deleteWidget);
 
-
   function findAllWidgets(req, res, next) {
-    Widget.find(function (err, success) {
-      if (success) {
-        res.send(200, success);
+    var conditions = {};
+    var projection = {};
+    var options = {};
+
+    Widget.find(conditions, projection, options, function (err, widgets) {
+      if (!err) {
+        res.status(200);
+        res.header('X-Total-Count', widgets.length);
+        res.send(widgets);
         return next();
       } else {
         return next(err);
@@ -31,12 +28,17 @@ module.exports = function (server) {
   }
 
   function findWidget(req, res, next) {
-    Widget.findOne({'product_id': req.params.product_id}, function (err, success) {
-      if (success) {
-        res.send(200, success);
+    var conditions = {'product_id': req.params.product_id};
+    var projection = {};
+    var options = {};
+
+    Widget.findOne(conditions, projection, options, function (err, widget) {
+      if (!err) {
+        res.send(200, widget);
         return next();
+      } else {
+        return next(err);
       }
-      return next(err);
     })
   }
 
@@ -49,7 +51,9 @@ module.exports = function (server) {
     widget.price = req.params.price;
     widget.inventory = req.params.inventory;
 
-    widget.save(function (err, success) {
+    var options = {};
+
+    widget.save(options, function (err, success) {
       if (success) {
         res.send(201, widget);
         return next();
@@ -59,9 +63,18 @@ module.exports = function (server) {
     })
   }
 
-  // TODO: Not functional yet...
   function updateWidget(req, res, next) {
-    Widget.findOneAndUpdate({}, {}, function (err, widget) {
+    var conditions = {'product_id': req.params.product_id};
+    var update = {
+      'name': req.params.name,
+      'color': req.params.color,
+      'size': req.params.size,
+      'price': req.params.price,
+      'inventory': req.params.inventory
+    };
+    var options = {upsert: true, runValidators: true, context: 'query'};
+
+    Widget.findOneAndUpdate(conditions, update, options, function (err, widget) {
       if (!err) {
         res.send(201, widget);
         return next();
@@ -72,8 +85,10 @@ module.exports = function (server) {
   }
 
   function deleteWidget(req, res, next) {
-    Widget.remove({'product_id': req.params.product_id}, function (err, success) {
-      if (success) {
+    var options = {'product_id': req.params.product_id};
+    
+    Widget.remove(options, function (err) {
+      if (!err) {
         res.send(204);
         return next();
       } else {

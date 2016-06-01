@@ -55,8 +55,6 @@ server.use(restify.bodyParser());
 server.use(restify.queryParser());
 server.use(restify.gzipResponse());
 server.pre(restify.pre.sanitizePath());
-
-// CORS
 server.use(
   function crossOrigin(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");

@@ -7,7 +7,7 @@ http://restify.com
 https://github.com/lawrence-yu/generator-restify-mongo  
 https://github.com/chris-l/generator-restify  
 https://blog.openshift.com/day-27-restify-build-correct-rest-web-services-in-nodejs  
-
+https://thejavanode.wordpress.com/2014/11/17/building-a-simple-rest-api-using-node-js-restify-js-and-mongodb-mongoose-js-part-3-defining-a-schema-and-using-a-modele/
 ```
 # populate MongoDB with (10) Widgets
 grunt

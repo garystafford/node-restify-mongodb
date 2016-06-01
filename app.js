@@ -57,8 +57,8 @@ server.use(restify.gzipResponse());
 server.pre(restify.pre.sanitizePath());
 server.use(
   function crossOrigin(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'X-Requested-With');
     return next();
   }
 );
@@ -74,7 +74,7 @@ server.on('uncaughtException', function (req, res, route, err) {
   if (!res.headersSent) {
     return res.send(500, {ok: false});
   }
-  res.write("\n");
+  res.write('\n');
   res.end();
 });
 

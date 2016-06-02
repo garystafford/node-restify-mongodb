@@ -4,22 +4,24 @@ var Widget = mongoose.model('Widget');
 module.exports = function (server) {
   // https://blog.openshift.com/day-27-restify-build-correct-rest-web-services-in-nodejs/
   var PATH = '/widgets';
-  server.get({path: PATH, version: '0.0.1'}, findAllWidgets);
-  server.get({path: PATH + '/:product_id', version: '0.0.1'}, findWidget);
-  server.post({path: PATH, version: '0.0.1'}, newWidget);
-  server.put({path: PATH, version: '0.0.1'}, updateWidget);
-  server.del({path: PATH + '/:product_id', version: '0.0.1'}, deleteWidget);
+  var VERSION = '0.0.1';
 
-  function findAllWidgets(req, res, next) {
+  server.get({path: PATH, version: VERSION}, findAllDocuments);
+  server.get({path: PATH + '/:product_id', version: VERSION}, findDocument);
+  server.post({path: PATH, version: VERSION}, newDocument);
+  server.put({path: PATH, version: VERSION}, updateDocument);
+  server.del({path: PATH + '/:product_id', version: VERSION}, deleteDocument);
+
+  function findAllDocuments(req, res, next) {
     var conditions = {};
     var projection = {};
     var options = {};
 
-    Widget.find(conditions, projection, options, function (err, widgets) {
+    Widget.find(conditions, projection, options, function (err, docs) {
       if (!err) {
         res.status(200);
-        res.header('X-Total-Count', widgets.length);
-        res.send(widgets);
+        res.header('X-Total-Count', docs.length);
+        res.send(docs);
         return next();
       } else {
         return next(err);
@@ -27,14 +29,14 @@ module.exports = function (server) {
     }).limit(20).sort({'name': 1});
   }
 
-  function findWidget(req, res, next) {
+  function findDocument(req, res, next) {
     var conditions = {'product_id': req.params.product_id};
     var projection = {};
     var options = {};
 
-    Widget.findOne(conditions, projection, options, function (err, widget) {
+    Widget.findOne(conditions, projection, options, function (err, doc) {
       if (!err) {
-        res.send(200, widget);
+        res.send(200, doc);
         return next();
       } else {
         return next(err);
@@ -42,20 +44,20 @@ module.exports = function (server) {
     })
   }
 
-  function newWidget(req, res, next) {
-    var widget = new Widget;
-    widget.product_id = req.params.product_id;
-    widget.name = req.params.name;
-    widget.color = req.params.color;
-    widget.size = req.params.size;
-    widget.price = req.params.price;
-    widget.inventory = req.params.inventory;
+  function newDocument(req, res, next) {
+    var doc = new Widget;
+    doc.product_id = req.params.product_id;
+    doc.name = req.params.name;
+    doc.color = req.params.color;
+    doc.size = req.params.size;
+    doc.price = req.params.price;
+    doc.inventory = req.params.inventory;
 
     var options = {};
 
-    widget.save(options, function (err, success) {
+    doc.save(options, function (err, success) {
       if (success) {
-        res.send(201, widget);
+        res.send(201, doc);
         return next();
       } else {
         return next(err);
@@ -63,7 +65,7 @@ module.exports = function (server) {
     })
   }
 
-  function updateWidget(req, res, next) {
+  function updateDocument(req, res, next) {
     var conditions = {'product_id': req.params.product_id};
     var update = {
       'name': req.params.name,
@@ -74,9 +76,9 @@ module.exports = function (server) {
     };
     var options = {upsert: true, runValidators: true, context: 'query'};
 
-    Widget.findOneAndUpdate(conditions, update, options, function (err, widget) {
+    Widget.findOneAndUpdate(conditions, update, options, function (err, doc) {
       if (!err) {
-        res.send(201, widget);
+        res.send(201, doc);
         return next();
       } else {
         return next(err);
@@ -84,9 +86,9 @@ module.exports = function (server) {
     });
   }
 
-  function deleteWidget(req, res, next) {
+  function deleteDocument(req, res, next) {
     var options = {'product_id': req.params.product_id};
-    
+
     Widget.remove(options, function (err) {
       if (!err) {
         res.send(204);

@@ -2,22 +2,14 @@
 'use strict';
 var restify = require('restify');
 var bunyan = require('bunyan');
-var glob = require('glob');
 var path = require('path');
-var mongoose = require('mongoose');
 
 var config = require(path.join(__dirname, '/config/config'));
 var models = require(path.join(__dirname, '/app/models/'));
 var routes = require(path.join(__dirname, '/app/routes/'));
-//var JSONFormatter = require(path.join(__dirname, '/app/common/JSONFormatter'));
+var dbConnection = require(path.join(__dirname, 'dbConnection'));
 
-var db_url = 'mongodb://' + config.db.host + ':' + config.db.port + '/' + config.db.name;
-mongoose.connect(db_url);
-console.log(db_url);
-var db = mongoose.connection;
-db.on('error', function () {
-  throw new Error('unable to connect to database at ' + db_url);
-});
+dbConnection();
 
 var log = bunyan.createLogger({
   name: config.log.name,
@@ -30,7 +22,6 @@ var server = restify.createServer({
   name: config.app.name,
   log: log,
   formatters: {
-    // 'application/json': JSONFormatter
     'application/json': function (req, res, body, cb) {
       res.setHeader('Cache-Control', 'must-revalidate');
 
@@ -90,5 +81,5 @@ server.get('/', function (req, res, next) {
 
 console.log('Server started.');
 server.listen(config.app.port, function () {
-  console.log('%s listening at %s', config.app.name, config.app.address);
+  console.log('Application %s listening at %s:%s', config.app.name, config.app.address, config.app.port);
 });

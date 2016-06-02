@@ -1,13 +1,13 @@
 {
   "name": "restify-example",
   "version": "0.1.0",
-  "description": "Restify / MongoDB Yeoman Genertor Project",
+  "description": "Node, Restify, MongoDB Yeoman Generator Project",
   "author": "Gary A. Stafford",
   "main": "app.js",
   "license": "MIT",
   "scripts": {
     "start": "node app.js",
-    "test": "node_modules/jshint/bin/jshint --show-non-errors --verbose app/ config/ server.js && node_modules/jasmine-node/bin/jasmine-node --verbose tests/"
+    "test": "node_modules/jshint/bin/jshint --show-non-errors --verbose app/ config/ app.js *.js && node_modules/jasmine-node/bin/jasmine-node --verbose spec"
   },
   "dependencies": {
     "bunyan": "^1.8.1",
@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "jasmine-node": "^1.14.5",
-    "jshint": "^2.9.2"
+    "jshint": "^2.9.2",
+    "request": "^2.72.0"
   }
 }

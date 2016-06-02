@@ -1,7 +1,7 @@
 {
-  "name": "restify-example",
-  "version": "0.1.0",
-  "description": "Node, Restify, MongoDB Yeoman Generator Project",
+  "name": "Widget-Microservice",
+  "version": "1.0.0",
+  "description": "Basic, RESTful, CRUD API, based on Node, Restify, and MongoDB",
   "author": "Gary A. Stafford",
   "main": "app.js",
   "license": "MIT",

@@ -1,12 +1,27 @@
+var path = require('path');
+
+var info_config = require(path.join(__dirname, '../../config/info'));
+
+var PATH = '/utils';
+var VERSION = '1.0.0';
+
 module.exports = function (server) {
-    var PATH = '/utils';
-    var VERSION = '0.0.1';
+  server.get({path: PATH + '/ping', version: VERSION}, ping);
+  server.get({path: PATH + '/info', version: VERSION}, info);
 
-    server.get({path: PATH + '/ping', version: VERSION}, ping);
+  function ping(req, res, next) {
+    res.send(200, true);
+    return next();
+  }
 
-    function ping(req, res, next) {
-        res.status(200);
-        res.send('true');
-        return next();
-    }
+  function info(req, res, next) {
+    var info = {
+      name: info_config.name,
+      version: info_config.version,
+      description: info_config.description,
+      author: info_config.author
+    };
+    res.send(200, info);
+    return next();
+  }
 };

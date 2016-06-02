@@ -11,9 +11,9 @@ describe('Widget Application', function () {
       });
     });
 
-    it('returns \"true\"', function (done) {
+    it('returns true', function (done) {
       request.get(base_url + '/utils/ping', function (error, response, body) {
-        expect(body).toBe('"true"');
+        expect(body).toBe('true');
         done();
       });
     });

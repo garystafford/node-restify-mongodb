@@ -1,9 +1,12 @@
 var mongoose = require('mongoose');
+var path = require('path');
+
+var config = require(path.join(__dirname, '../../config/config'));
 var Widget = mongoose.model('Widget');
 
 module.exports = function (server) {
     var PATH = '/widgets';
-    var VERSION = '0.0.1';
+    var VERSION = '1.0.0';
 
     server.get({path: PATH, version: VERSION}, findAllDocuments);
     server.get({path: PATH + '/:product_id', version: VERSION}, findDocument);

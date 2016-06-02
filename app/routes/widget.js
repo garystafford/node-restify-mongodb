@@ -1,8 +1,4 @@
-var mongoose = require('mongoose');
-var Widget = mongoose.model('Widget');
-
 module.exports = function (server) {
-  // https://blog.openshift.com/day-27-restify-build-correct-rest-web-services-in-nodejs/
   var PATH = '/widgets';
   var VERSION = '0.0.1';
 

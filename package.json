@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node app.js",
-    "test": "node_modules/jshint/bin/jshint --show-non-errors --verbose app/ config/ app.js *.js && node_modules/jasmine-node/bin/jasmine-node --verbose spec"
+    "test": "node_modules/jshint/bin/jshint --verbose app/ config/ app.js *.js && node node_modules/jasmine-node/lib/jasmine-node/cli.js --color --verbose --captureExceptions spec"
   },
   "dependencies": {
     "bunyan": "^1.8.1",

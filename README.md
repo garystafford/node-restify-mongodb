@@ -21,7 +21,7 @@ server.del({path: PATH + '/:product_id', version: VERSION}, deleteDocument);
 
 #### Widget
 A 'widget' is the mongoose.js model/schema example object. The widget's document structure looks like:
-```bson
+``` bson
 {
   "_id": ObjectId("574cf9bb0f515d7c67a87026"),
   "product_id": "4OZNPBMIDR",
@@ -35,7 +35,7 @@ A 'widget' is the mongoose.js model/schema example object. The widget's document
 
 #### Commands
 Application
-```
+``` bash
 # populate MongoDB with (10) sample widgets
 grunt mongoimport
   Running "mongoimport" task
@@ -43,17 +43,17 @@ grunt mongoimport
   2016-06-04T01:09:28.484-0400	dropping: node-restify-mongodb-development.widgets
   2016-06-04T01:09:28.553-0400	imported 10 documents
 ```
-```
+``` bash
 # test app with both jshint and jasmine-node
 npm test
 ```
-```
+``` bash
 # start application
 npm run
 ```
 
 Mongo
-```
+``` mongo
 mongo
   MongoDB shell version: 3.0.7
   connecting to: test

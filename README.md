@@ -2,16 +2,17 @@
 
 #### Introduction
 A basic, RESTful CRUD API, based on Node, Restify, and MongoDB.
-Designed and built using the best part of the following three Yeoman generator projects:  
-[generator-restify-mongo](https://github.com/lawrence-yu/generator-restify-mongo)  
-[generator-restify](https://github.com/chris-l/generator-restify)  
-[generator-express](https://github.com/expressjs/generator)  
+Designed and built using, what I consider, the best part of the following three Yeoman generators:  
+* [generator-restify-mongo](https://github.com/lawrence-yu/generator-restify-mongo)  
+* [generator-restify](https://github.com/chris-l/generator-restify)  
+* [generator-express](https://github.com/expressjs/generator)  
 
-#### Endpoints
+#### API Endpoints
 ``` javascript
 var PATH = '/widgets';
 var VERSION = '1.0.0';
-
+  
+# basic CRUD operations
 server.get({path: PATH, version: VERSION}, findDocuments);
 server.get({path: PATH + '/:product_id', version: VERSION}, findOneDocument);
 server.post({path: PATH, version: VERSION}, createDocument);
@@ -20,7 +21,7 @@ server.del({path: PATH + '/:product_id', version: VERSION}, deleteDocument);
 ```
 
 #### Widget
-A 'widget' is the mongoose.js model/schema example object. The widget's document structure looks like:
+The 'widget' object is used to demonstrate mongoose.js model and schema. The widget's structure looks like:
 ``` bson
 {
   "_id": ObjectId("574cf9bb0f515d7c67a87026"),
@@ -34,14 +35,14 @@ A 'widget' is the mongoose.js model/schema example object. The widget's document
 ```
 
 #### Commands
-Download and Install
+Download and Install the project from GitHub
 ```bash
 git clone https://github.com/garystafford/node-restify-mongodb.git
 cd node-restify-mongodb
 npm install
 ```
 
-Populate MongoDB with (10) sample widgets
+Populate MongoDB with sample widgets
 ``` bash
 grunt mongoimport
   Running "mongoimport" task
@@ -52,22 +53,27 @@ grunt mongoimport
   Process finished with exit code 0
 ```
 
-Start application
+Start the application
 ``` bash
 npm run
 ```
 
 Test application with jshint and jasmine-node  
-(application must be running)
+Note, application must be running for Jasmine tests
 ``` bash
 npm test
 ```
 
 Grunt tasks
 ```
-grunt mongoimport # Grunt task for importing data into mongodb
-grunt # Alias for "mongoimport", "exec:jshint_test", "exec:jasmine_test" tasks.
-grunt test # Alias for "exec:jshint_test", "exec:jasmine_test" tasks.
+# grunt task for importing data into mongodb
+grunt mongoimport
+
+# alias for "mongoimport", "exec:jshint_test", "exec:jasmine_test" tasks
+grunt
+
+# alias for "exec:jshint_test", "exec:jasmine_test" tasks
+grunt test 
 ```
 
 MongoDB

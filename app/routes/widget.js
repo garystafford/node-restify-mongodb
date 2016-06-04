@@ -8,13 +8,13 @@ module.exports = function (server) {
     var PATH = '/widgets';
     var VERSION = '1.0.0';
 
-    server.get({path: PATH, version: VERSION}, findAllDocuments);
-    server.get({path: PATH + '/:product_id', version: VERSION}, findDocument);
-    server.post({path: PATH, version: VERSION}, newDocument);
+    server.get({path: PATH, version: VERSION}, findDocuments);
+    server.get({path: PATH + '/:product_id', version: VERSION}, findOneDocument);
+    server.post({path: PATH, version: VERSION}, createDocument);
     server.put({path: PATH, version: VERSION}, updateDocument);
     server.del({path: PATH + '/:product_id', version: VERSION}, deleteDocument);
 
-    function findAllDocuments(req, res, next) {
+    function findDocuments(req, res, next) {
         var conditions = {};
         var projection = {};
         var options = {};
@@ -31,7 +31,7 @@ module.exports = function (server) {
         }).limit(20).sort({'name': 1});
     }
 
-    function findDocument(req, res, next) {
+    function findOneDocument(req, res, next) {
         var conditions = {'product_id': req.params.product_id};
         var projection = {};
         var options = {};
@@ -46,7 +46,7 @@ module.exports = function (server) {
         });
     }
 
-    function newDocument(req, res, next) {
+    function createDocument(req, res, next) {
         var doc = new Widget();
         doc.product_id = req.params.product_id;
         doc.name = req.params.name;

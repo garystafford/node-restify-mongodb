@@ -9,7 +9,7 @@ Designed and built using the best part of the following three Yeoman generator p
 
 #### Widget
 A 'widget' is the mongoose.js model/schema example object. The widget's document structure looks like:
-```
+```bson
 {
   "_id": ObjectId("574cf9bb0f515d7c67a87026"),
   "product_id": "4OZNPBMIDR",
@@ -50,7 +50,7 @@ widgets
 
 > db.widgets.find()
 ```
-``` json
+``` bson
 { "_id" : ObjectId("574cf9bb0f515d7c67a87026"), "product_id" : "4OZNPBMIDR", "name" : "Fapster", "color" : "Orange", "size" : "Medium", "price" : "29.99", "inventory" : 5 }
 { "_id" : ObjectId("574cf9bb0f515d7c67a87027"), "product_id" : "SVHXPAWEOD", "name" : "Voonex", "color" : "Green", "size" : "Medium", "price" : "$10.99", "inventory" : 50 }
 { "_id" : ObjectId("574cf9bb0f515d7c67a87028"), "product_id" : "3YIRGZ6TDW", "name" : "Groopster", "color" : "Yellow", "size" : "Large", "price" : "$99.95", "inventory" : 100 }

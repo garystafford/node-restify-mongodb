@@ -52,14 +52,15 @@ grunt mongoimport
   Process finished with exit code 0
 ```
 
-Test application with both jshint and jasmine-node (app must be running)
-``` bash
-npm test
-```
-
 Start application
 ``` bash
 npm run
+```
+
+Test application with jshint and jasmine-node  
+(application must be running)
+``` bash
+npm test
 ```
 
 Grunt tasks
@@ -68,6 +69,7 @@ grunt mongoimport # Grunt task for importing data into mongodb
 grunt # Alias for "mongoimport", "exec:jshint_test", "exec:jasmine_test" tasks.
 grunt test # Alias for "exec:jshint_test", "exec:jasmine_test" tasks.
 ```
+
 MongoDB
 ``` mongo
 mongo

@@ -9,14 +9,14 @@ Designed and built using the best part of the following three Yeoman generator p
 
 #### Endpoints
 ``` javascript
-    var PATH = '/widgets';
-    var VERSION = '1.0.0';
+var PATH = '/widgets';
+var VERSION = '1.0.0';
 
-    server.get({path: PATH, version: VERSION}, findDocuments);
-    server.get({path: PATH + '/:product_id', version: VERSION}, findOneDocument);
-    server.post({path: PATH, version: VERSION}, createDocument);
-    server.put({path: PATH, version: VERSION}, updateDocument);
-    server.del({path: PATH + '/:product_id', version: VERSION}, deleteDocument);
+server.get({path: PATH, version: VERSION}, findDocuments);
+server.get({path: PATH + '/:product_id', version: VERSION}, findOneDocument);
+server.post({path: PATH, version: VERSION}, createDocument);
+server.put({path: PATH, version: VERSION}, updateDocument);
+server.del({path: PATH + '/:product_id', version: VERSION}, deleteDocument);
 ```
 
 #### Widget

@@ -3,11 +3,16 @@
   "version": "1.0.0",
   "description": "Basic, RESTful CRUD API, based on Node, Restify, and MongoDB",
   "author": "Gary A. Stafford",
+  "url": "https://github.com/garystafford/node-restify-mongodb/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/garystafford/node-restify-mongodb.git"
+  },
   "main": "app.js",
   "license": "MIT",
   "scripts": {
     "start": "node app.js",
-    "test": "node_modules/jshint/bin/jshint --verbose --show-non-errors app/ config/ app.js *.js && node node_modules/jasmine-node/lib/jasmine-node/cli.js --color --verbose --captureExceptions spec"
+    "test": "grunt test"
   },
   "dependencies": {
     "bunyan": "^1.8.1",
@@ -21,6 +26,7 @@
     "restify": "^4.1.0"
   },
   "devDependencies": {
+    "grunt-exec": "^0.4.7",
     "jasmine-node": "^1.14.5",
     "jshint": "^2.9.2",
     "request": "^2.72.0"

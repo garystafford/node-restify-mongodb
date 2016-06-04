@@ -3,7 +3,7 @@
 var restify = require('restify');
 var bunyan = require('bunyan');
 var path = require('path');
-var glob = require('glob');
+//var glob = require('glob');
 
 var config = require(path.join(__dirname, '/config/config'));
 var models = require(path.join(__dirname, '/app/models/'));

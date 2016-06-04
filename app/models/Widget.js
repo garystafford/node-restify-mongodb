@@ -16,7 +16,7 @@ var widgetSchema = new Schema({
     enum: ['Huge', 'Big', 'Medium', 'Small', 'Tiny']
   },
   price: {type: Currency, required: true},
-  inventory: {type: Number, required: true, min: 0},
+  inventory: {type: Number, required: true, min: 0}
 });
 
 // apply the mongoose unique validator plugin to widgetSchema

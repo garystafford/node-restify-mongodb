@@ -6,7 +6,7 @@
 		"e0154dd5-892a-6673-5872-615afc8f36de",
 		"ae377132-308b-dd7b-fe7d-4cebfb93a3e2",
 		"4aa35826-4931-a93d-cd98-506c68a113bd",
-		"ebd5c668-beaf-d1b7-3315-0b28671dd4ba",
+		"d9c13b13-6fb8-a057-7275-da38fcfb71fa",
 		"b7461c74-f7d6-fd78-3e07-53c07df35588",
 		"ad41a4d1-795d-49fa-935c-9d32fe584d4a",
 		"718b15f9-8bba-e699-10cc-48d7b1911364"
@@ -107,12 +107,32 @@
 			"tests": "",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1464811050558,
+			"time": 1465051427472,
 			"name": "localhost:3000/widgets (PUT)",
 			"description": "",
 			"collectionId": "b0554bde-d0fe-448d-3203-4bbb95e54c96",
 			"responses": [],
 			"rawModeData": "{\n\t\"product_id\": \"N212QZOD9B\",\n\t\"name\": \"Pentwist\",\n\t\"color\": \"Yellow\",\n\t\"size\": \"Huge\",\n\t\"price\": \"$169.98\",\n\t\"inventory\": 91\n}"
+		},
+		{
+			"id": "d9c13b13-6fb8-a057-7275-da38fcfb71fa",
+			"headers": "Accept: application/json\nContent-Type: application/json\n",
+			"url": "http://{{hostname}}:{{port}}/widgets",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1465051570209,
+			"name": "localhost:3000/widgets (POST NEW)",
+			"description": "",
+			"collectionId": "b0554bde-d0fe-448d-3203-4bbb95e54c96",
+			"responses": [],
+			"rawModeData": "{\n\t\"product_id\": \"N212QZOD9B\",\n\t\"name\": \"Pentwist\",\n\t\"color\": \"Yellow\",\n\t\"size\": \"Huge\",\n\t\"price\": \"$159.98\",\n\t\"inventory\": 95\n}"
 		},
 		{
 			"id": "e0154dd5-892a-6673-5872-615afc8f36de",
@@ -132,26 +152,6 @@
 			"description": "",
 			"collectionId": "b0554bde-d0fe-448d-3203-4bbb95e54c96",
 			"responses": []
-		},
-		{
-			"id": "ebd5c668-beaf-d1b7-3315-0b28671dd4ba",
-			"headers": "Accept: application/json\nContent-Type: application/json\n",
-			"url": "http://{{hostname}}:{{port}}/widgets",
-			"preRequestScript": null,
-			"pathVariables": {},
-			"method": "POST",
-			"data": [],
-			"dataMode": "raw",
-			"version": 2,
-			"tests": "",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1464811041071,
-			"name": "localhost:3000/widgets (POST NEW)",
-			"description": "",
-			"collectionId": "b0554bde-d0fe-448d-3203-4bbb95e54c96",
-			"responses": [],
-			"rawModeData": "{\n\t\"product_id\": \"N212QZOD9B\",\n\t\"name\": \"Pentwist\",\n\t\"color\": \"Yellow\",\n\t\"size\": \"Huge\",\n\t\"price\": \"$159.98\",\n\t\"inventory\": 95\n}"
 		}
 	]
 }

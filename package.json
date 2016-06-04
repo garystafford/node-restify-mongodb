@@ -16,10 +16,7 @@
   },
   "dependencies": {
     "bunyan": "^1.8.1",
-    "glob": "^7.0.3",
     "grunt": "^1.0.1",
-    "grunt-mongoimport": "^0.1.7",
-    "keymirror": "^0.1.1",
     "mongoose": "^4.4.19",
     "mongoose-currency": "^0.2.0",
     "mongoose-unique-validator": "^1.0.2",
@@ -27,6 +24,7 @@
   },
   "devDependencies": {
     "grunt-exec": "^0.4.7",
+    "grunt-mongoimport": "^0.1.7",
     "jasmine-node": "^1.14.5",
     "jshint": "^2.9.2",
     "request": "^2.72.0"

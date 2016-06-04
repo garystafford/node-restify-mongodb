@@ -1,6 +1,8 @@
 var request = require('request');
+var path = require('path');
 
-var base_url = 'http://localhost:3000';
+var config = require(path.join(__dirname, '../config/config'));
+var base_url = ''.concat('http://', config.app.address, ':', config.app.port);
 
 describe('Widget Application Utilities', function () {
   describe('GET /utils/ping', function () {
@@ -34,5 +36,4 @@ describe('Widget Application Utilities', function () {
       });
     });
   });
-
 });

@@ -34,9 +34,8 @@ server.get({path: PATH + '/env', version: VERSION}, environment);
 
 #### Widget
 The 'widget' object is used to demonstrate mongoose.js model and schema. The widget's structure looks like:
-``` bson
+``` json
 {
-  "_id": ObjectId("574cf9bb0f515d7c67a87026"),
   "product_id": "4OZNPBMIDR",
   "name": "Fapster",
   "color": "Orange",

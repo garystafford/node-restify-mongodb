@@ -11,15 +11,22 @@ Along with Node, Restify, and MongoDB, the project implements Bunyan (which incl
 
 #### API Endpoints
 ``` javascript
+# basic CRUD resources
 var PATH = '/widgets';
-var VERSION = '1.0.0';
-  
-# basic CRUD operations
+
 server.get({path: PATH, version: VERSION}, findDocuments);
 server.get({path: PATH + '/:product_id', version: VERSION}, findOneDocument);
 server.post({path: PATH, version: VERSION}, createDocument);
 server.put({path: PATH, version: VERSION}, updateDocument);
 server.del({path: PATH + '/:product_id', version: VERSION}, deleteDocument);
+  
+# utility resources
+var PATH = '/utils';
+server.get({path: PATH + '/ping', version: VERSION}, ping);
+server.get({path: PATH + '/health', version: VERSION}, health);
+server.get({path: PATH + '/info', version: VERSION}, information);
+server.get({path: PATH + '/config', version: VERSION}, configuraton);
+server.get({path: PATH + '/env', version: VERSION}, environment);
 ```
 
 #### Widget

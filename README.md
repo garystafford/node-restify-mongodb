@@ -1,13 +1,16 @@
 ## Node Restify MongoDB API Example
 
 #### Introduction
-A basic, RESTful CRUD API, based on Node, Restify, and MongoDB.
-Designed and built using, what I consider, the best part of the following three Yeoman generators:  
+A basic, RESTful CRUD API, based on [Node](https://nodejs.org), [Restify](http://restify.com),
+ and [MongoDB](https://www.mongodb.com).
+Designed and built using, what I consider, the best part of three [Yeoman generators](http://yeoman.io/generators/):  
 * [generator-restify-mongo](https://github.com/lawrence-yu/generator-restify-mongo)  
 * [generator-restify](https://github.com/chris-l/generator-restify)  
 * [generator-express](https://github.com/expressjs/generator)  
 
-Along with Node, Restify, and MongoDB, the project implements Bunyan (which include DTrace support), Jasmine, Mongoose, and Grunt.
+Along with Node, Restify, and MongoDB, the project implements [Bunyan](https://github.com/trentm/node-bunyan)
+ (include [DTrace](http://dtrace.org/blogs/about/) support), [Jasmine](https://github.com/mhevery/jasmine-node),
+  [Mongoose](http://mongoosejs.com/index.html), and [Grunt](http://gruntjs.com).
 
 #### API Endpoints
 ``` javascript
@@ -111,8 +114,18 @@ db.widgets.find()
 ```
 
 #### TODO
-* Add Widget endpoint Jasmine tests
-* Add new Utility endpoint Jasmine tests
+* Add Jasmine tests for new Utility endpoints
+* Add Jasmine tests for Widget endpoints
 * Add ability to read query params
-* Add filtering, sorting, field selection and paging for collections
+* Add filtering, sorting, field selection and paging
 * Add HATEOAS features
+
+
+#### References
+http://blog.mwaysolutions.com/2014/06/05/10-best-practices-for-better-restful-api
+https://blog.openshift.com/day-27-restify-build-correct-rest-web-services-in-nodejs
+https://scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications
+http://stackoverflow.com/questions/15123182/mongoose-findoneandupdate-not-working
+http://support.mashery.com/docs/read/mashery_api/30/Pagination
+https://semaphoreci.com/community/tutorials/getting-started-with-node-js-and-jasmine
+https://github.com/mhevery/jasmine-node/blob/master/package.json

@@ -122,10 +122,10 @@ db.widgets.find()
 
 
 #### References
-http://blog.mwaysolutions.com/2014/06/05/10-best-practices-for-better-restful-api
-https://blog.openshift.com/day-27-restify-build-correct-rest-web-services-in-nodejs
-https://scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications
-http://stackoverflow.com/questions/15123182/mongoose-findoneandupdate-not-working
-http://support.mashery.com/docs/read/mashery_api/30/Pagination
-https://semaphoreci.com/community/tutorials/getting-started-with-node-js-and-jasmine
-https://github.com/mhevery/jasmine-node/blob/master/package.json
+http://blog.mwaysolutions.com/2014/06/05/10-best-practices-for-better-restful-api  
+https://blog.openshift.com/day-27-restify-build-correct-rest-web-services-in-nodejs  
+https://scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications  
+http://stackoverflow.com/questions/15123182/mongoose-findoneandupdate-not-working  
+http://support.mashery.com/docs/read/mashery_api/30/Pagination  
+https://semaphoreci.com/community/tutorials/getting-started-with-node-js-and-jasmine  
+https://github.com/mhevery/jasmine-node/blob/master/package.json  

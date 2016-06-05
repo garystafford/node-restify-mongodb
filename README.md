@@ -3,14 +3,15 @@
 #### Introduction
 A basic, RESTful CRUD API, based on [Node](https://nodejs.org), [Restify](http://restify.com),
  and [MongoDB](https://www.mongodb.com).
-Designed and built using, what I consider, the best part of three [Yeoman generators](http://yeoman.io/generators/):  
+Designed and built using, what I consider, the best parts of three different
+ [Yeoman generators](http://yeoman.io/generators/):  
 * [generator-restify-mongo](https://github.com/lawrence-yu/generator-restify-mongo)  
 * [generator-restify](https://github.com/chris-l/generator-restify)  
 * [generator-express](https://github.com/expressjs/generator)  
 
 Along with Node, Restify, and MongoDB, the project implements [Bunyan](https://github.com/trentm/node-bunyan)
  (include [DTrace](http://dtrace.org/blogs/about/) support), [Jasmine](https://github.com/mhevery/jasmine-node),
-  [Mongoose](http://mongoosejs.com/index.html), and [Grunt](http://gruntjs.com).
+ [Mongoose](http://mongoosejs.com/index.html), and [Grunt](http://gruntjs.com).
 
 #### API Endpoints
 ``` javascript

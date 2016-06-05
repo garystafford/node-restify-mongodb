@@ -10,7 +10,7 @@ module.exports = function (server) {
   server.get({path: PATH + '/health', version: VERSION}, health);
   server.get({path: PATH + '/info', version: VERSION}, information);
   server.get({path: PATH + '/config', version: VERSION}, configuraton);
-  server.get({path: PATH + '/env', version: VERSION}, environment);
+  server.get({path: PATH + '/ENV', version: VERSION}, environment);
 
   function ping(req, res, next) {
     res.send(200, true);

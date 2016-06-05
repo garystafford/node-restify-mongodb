@@ -1,5 +1,5 @@
 {
-  "name": "Widget-Microservice",
+  "name": "Widget Microservice",
   "version": "1.0.0",
   "description": "Basic, RESTful CRUD API, based on Node, Restify, and MongoDB",
   "author": "Gary A. Stafford",
@@ -11,7 +11,7 @@
   "main": "app.js",
   "license": "MIT",
   "scripts": {
-    "start": "node app.js",
+    "start": "node app.js | ./node_modules/bunyan/bin/bunyan",
     "test": "grunt test"
   },
   "dependencies": {

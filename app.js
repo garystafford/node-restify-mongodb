@@ -1,22 +1,15 @@
 /*jslint node: true, indent: 2 */
 'use strict';
 var restify = require('restify');
-var bunyan = require('bunyan');
 var path = require('path');
 
 var config = require(path.join(__dirname, '/config/config'));
+var log = require(path.join(__dirname, 'log'));
 var models = require(path.join(__dirname, '/app/models/'));
 var routes = require(path.join(__dirname, '/app/routes/'));
 var dbConnection = require(path.join(__dirname, 'dbConnection'));
 
 dbConnection();
-
-var log = bunyan.createLogger({
-  name: config.log.name,
-  level: config.log.level,
-  stream: process.stdout,
-  serializers: bunyan.stdSerializers
-});
 
 var server = restify.createServer({
   name: config.app.name,
@@ -38,11 +31,7 @@ server.use(
 /*jslint unparam:true*/
 // Default error handler. Personalize according to your needs.
 server.on('uncaughtException', function (req, res, route, err) {
-  console.log('******* Begin Error *******');
-  console.log(route);
-  console.log('*******');
-  console.log(err.stack);
-  console.log('******* End Error *******');
+  log.info('******* Begin Error *******\n%s\n*******\n%s\n******* End Error *******', route, err.stack);
   if (!res.headersSent) {
     return res.send(500, {ok: false});
   }
@@ -60,7 +49,6 @@ server.get('/', function (req, res, next) {
   return next();
 });
 
-console.log('Server started.');
 server.listen(config.app.port, function () {
-  console.log('Application %s listening at %s:%s', config.app.name, config.app.address, config.app.port);
+  log.info('Application %s listening at %s:%s', config.app.name, config.app.address, config.app.port);
 });

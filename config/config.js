@@ -1,5 +1,7 @@
 var path = require('path');
+
 var rootPath = path.normalize(__dirname + '/..');
+
 var env = process.env.NODE_ENV || 'development';
 var level = process.env.LOG_LEVEL || 'info';
 var port = process.env.PORT || 3000;

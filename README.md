@@ -7,6 +7,8 @@ Designed and built using, what I consider, the best part of the following three 
 * [generator-restify](https://github.com/chris-l/generator-restify)  
 * [generator-express](https://github.com/expressjs/generator)  
 
+Along with Node, Restify, and MongoDB, the project implements Bunyan (which include DTrace support), Jasmine, Mongoose, and Grunt.
+
 #### API Endpoints
 ``` javascript
 var PATH = '/widgets';

@@ -1,5 +1,5 @@
 {
-  "name": "Widget Microservice",
+  "name": "Widget_Microservice",
   "version": "1.0.0",
   "description": "Basic, RESTful CRUD API, based on Node, Restify, and MongoDB",
   "author": "Gary A. Stafford",

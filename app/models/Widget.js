@@ -19,6 +19,8 @@ var widgetSchema = new Schema({
   inventory: {type: Number, required: true, min: 0}
 });
 
+widgetSchema.set('timestamps', true);
+
 // apply the mongoose unique validator plugin to widgetSchema
 widgetSchema.plugin(uniqueValidator);
 
@@ -27,6 +29,8 @@ widgetSchema.set('toJSON', {
   virtuals: true,
   transform: function (doc, ret, options) {
     ret.price = Number(ret.price / 100).toFixed(2);
+    delete ret.__v;
+    delete ret._id;
   }
 });
 

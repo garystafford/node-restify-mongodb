@@ -13,7 +13,6 @@ Along with Node, Restify, and MongoDB, the project implements Bunyan (which incl
 ``` javascript
 # basic CRUD resources
 var PATH = '/widgets';
-
 server.get({path: PATH, version: VERSION}, findDocuments);
 server.get({path: PATH + '/:product_id', version: VERSION}, findOneDocument);
 server.post({path: PATH, version: VERSION}, createDocument);

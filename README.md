@@ -1,10 +1,13 @@
 ## Node-Restify-MongoDB RESTful API Example
 
 #### Introduction
-A basic, RESTful CRUD API, based on [Node](https://nodejs.org), [Restify](http://restify.com),
- and [MongoDB](https://www.mongodb.com).
-Based partly on, what I consider, the best parts of three different
- [Yeoman generators](http://yeoman.io/generators/):  
+A basic, RESTful CRUD API example, based on [Node](https://nodejs.org), [Restify](http://restify.com),
+ and [MongoDB](https://www.mongodb.com). Restify, used, notably, by [Netflix](http://techblog.netflix.com/2014/11/nodejs-in-flames.html),
+ borrows heavily from [Express](http://expressjs.com), according to the Restify website. However, while Express is targeted at browser
+ applications, with templating and rendering, Restify is focused on building API services that are maintainable and observable.         
+
+The structure of the project, and a portion of the code is derived from, what I consider, the best parts of three different
+ [Yeoman generators](http://yeoman.io/generators/)  
 * [generator-restify-mongo](https://github.com/lawrence-yu/generator-restify-mongo)  
 * [generator-restify](https://github.com/chris-l/generator-restify)  
 * [generator-express](https://github.com/expressjs/generator)  
@@ -14,7 +17,7 @@ Along with Node, Restify, and MongoDB, the project also implements [Bunyan](http
  [Mongoose](http://mongoosejs.com/index.html), and [Grunt](http://gruntjs.com).
 
 #### API Endpoints
-``` javascript
+```javascript
 # basic CRUD resources
 var PATH = '/widgets';
 server.get({path: PATH, version: VERSION}, findDocuments);
@@ -34,7 +37,7 @@ server.get({path: PATH + '/env', version: VERSION}, environment);
 
 #### Widget
 The 'widget' object is used to demonstrate mongoose.js model and schema. The widget's structure looks like:
-``` json
+```json
 {
   "product_id": "4OZNPBMIDR",
   "name": "Fapster",
@@ -54,7 +57,7 @@ npm install
 ```
 
 Populate MongoDB with sample widgets
-``` bash
+```bash
 grunt mongoimport
   Running "mongoimport" task
   2016-06-04T01:09:28.483-0400	connected to: 127.0.0.1
@@ -65,13 +68,13 @@ grunt mongoimport
 ```
 
 Start the application
-``` bash
+```bash
 npm run
 ```
 
 Test application with jshint and jasmine-node  
 Note, application must be running for Jasmine tests
-``` bash
+```bash
 npm test
 ```
 
@@ -88,7 +91,7 @@ grunt test
 ```
 
 MongoDB
-``` mongo
+```mongo
 mongo
   MongoDB shell version: 3.0.7
   connecting to: test
@@ -114,7 +117,7 @@ db.widgets.find()
 ```
 
 #### TODO
-* Add Jasmine tests for new Utility endpoints
+* ~~Add Jasmine tests for new Utility endpoints~~
 * Add Jasmine tests for Widget endpoints
 * Add ability to read query params
 * Add filtering, sorting, field selection and paging
@@ -129,3 +132,5 @@ http://stackoverflow.com/questions/15123182/mongoose-findoneandupdate-not-workin
 http://support.mashery.com/docs/read/mashery_api/30/Pagination  
 https://semaphoreci.com/community/tutorials/getting-started-with-node-js-and-jasmine  
 https://github.com/mhevery/jasmine-node/blob/master/package.json  
+http://stackoverflow.com/a/20730416/580268
+

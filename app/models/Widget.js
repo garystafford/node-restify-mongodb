@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 require('mongoose-currency').loadType(mongoose);
 var uniqueValidator = require('mongoose-unique-validator');
+
 var Schema = mongoose.Schema;
 var Currency = mongoose.Types.Currency;
 
@@ -19,7 +20,7 @@ var widgetSchema = new Schema({
   inventory: {type: Number, required: true, min: 0}
 });
 
-widgetSchema.set('timestamps', true);
+widgetSchema.set('timestamps', true); // include timestamps in docs
 
 // apply the mongoose unique validator plugin to widgetSchema
 widgetSchema.plugin(uniqueValidator);
@@ -29,8 +30,8 @@ widgetSchema.set('toJSON', {
   virtuals: true,
   transform: function (doc, ret, options) {
     ret.price = Number(ret.price / 100).toFixed(2);
-    delete ret.__v;
-    delete ret._id;
+    delete ret.__v; // hide
+    delete ret._id; // hide
   }
 });
 

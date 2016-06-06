@@ -7,7 +7,7 @@ var config = require(path.join(__dirname, '/config/config'));
 var log = require(path.join(__dirname, 'log'));
 var models = require(path.join(__dirname, '/app/models/'));
 var routes = require(path.join(__dirname, '/app/routes/'));
-var dbConnection = require(path.join(__dirname, 'dbConnection'));
+var dbConnection = require(path.join(__dirname, 'db-connection'));
 
 dbConnection();
 

@@ -1,157 +1,221 @@
 {
-	"id": "b0554bde-d0fe-448d-3203-4bbb95e54c96",
-	"name": "Widgets",
-	"description": "",
-	"order": [
-		"e0154dd5-892a-6673-5872-615afc8f36de",
-		"ae377132-308b-dd7b-fe7d-4cebfb93a3e2",
-		"4aa35826-4931-a93d-cd98-506c68a113bd",
-		"d9c13b13-6fb8-a057-7275-da38fcfb71fa",
-		"b7461c74-f7d6-fd78-3e07-53c07df35588",
-		"ad41a4d1-795d-49fa-935c-9d32fe584d4a",
-		"718b15f9-8bba-e699-10cc-48d7b1911364"
-	],
-	"folders": [],
-	"timestamp": 1464659914076,
-	"owner": "44217",
-	"remoteLink": "",
-	"public": false,
-	"requests": [
+	"variables": [],
+	"info": {
+		"name": "Widgets",
+		"_postman_id": "b0554bde-d0fe-448d-3203-4bbb95e54c96",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
 		{
-			"id": "4aa35826-4931-a93d-cd98-506c68a113bd",
-			"headers": "Accept: application/json\n",
-			"url": "http://{{hostname}}:{{port}}/widgets/N212QZOD9B",
-			"preRequestScript": null,
-			"pathVariables": {},
-			"method": "DELETE",
-			"data": [],
-			"dataMode": "params",
-			"version": 2,
-			"tests": "",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1464810786921,
-			"name": "localhost:3000/widgets/N212QZOD9B (DELETE)",
-			"description": "",
-			"collectionId": "b0554bde-d0fe-448d-3203-4bbb95e54c96",
-			"responses": []
-		},
-		{
-			"id": "718b15f9-8bba-e699-10cc-48d7b1911364",
-			"headers": "Accept: application/json\n",
-			"url": "http://{{hostname}}:{{port}}/utils/info",
-			"pathVariables": {},
-			"preRequestScript": null,
-			"method": "GET",
-			"collectionId": "b0554bde-d0fe-448d-3203-4bbb95e54c96",
-			"data": [],
-			"dataMode": "params",
-			"name": "localhost:3000/utils/info",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1464848089325,
-			"version": 2,
-			"responses": [],
-			"tests": "",
-			"currentHelper": "normal",
-			"helperAttributes": {}
-		},
-		{
-			"id": "ad41a4d1-795d-49fa-935c-9d32fe584d4a",
-			"headers": "Accept: text/plain\n",
-			"url": "http://{{hostname}}:{{port}}/utils/ping",
-			"preRequestScript": null,
-			"pathVariables": {},
-			"method": "GET",
-			"data": [],
-			"dataMode": "params",
-			"version": 2,
-			"tests": "",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1464969426580,
-			"name": "localhost:3000/utils/ping",
-			"description": "",
-			"collectionId": "b0554bde-d0fe-448d-3203-4bbb95e54c96",
-			"responses": []
-		},
-		{
-			"id": "ae377132-308b-dd7b-fe7d-4cebfb93a3e2",
-			"headers": "Accept: application/json\n",
-			"url": "http://{{hostname}}:{{port}}/widgets/N212QZOD9B",
-			"preRequestScript": null,
-			"pathVariables": {},
-			"method": "GET",
-			"data": [],
-			"dataMode": "params",
-			"version": 2,
-			"tests": "",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1464810779930,
-			"name": "localhost:3000/widgets/N212QZOD9B (GET ONE)",
-			"description": "",
-			"collectionId": "b0554bde-d0fe-448d-3203-4bbb95e54c96",
-			"responses": []
-		},
-		{
-			"id": "b7461c74-f7d6-fd78-3e07-53c07df35588",
-			"headers": "Accept: application/json\nContent-Type: application/json\n",
-			"url": "http://{{hostname}}:{{port}}/widgets",
-			"preRequestScript": null,
-			"pathVariables": {},
-			"method": "PUT",
-			"data": [],
-			"dataMode": "raw",
-			"version": 2,
-			"tests": "",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1465051427472,
-			"name": "localhost:3000/widgets (PUT)",
-			"description": "",
-			"collectionId": "b0554bde-d0fe-448d-3203-4bbb95e54c96",
-			"responses": [],
-			"rawModeData": "{\n\t\"product_id\": \"N212QZOD9B\",\n\t\"name\": \"Pentwist\",\n\t\"color\": \"Yellow\",\n\t\"size\": \"Huge\",\n\t\"price\": \"$169.98\",\n\t\"inventory\": 91\n}"
-		},
-		{
-			"id": "d9c13b13-6fb8-a057-7275-da38fcfb71fa",
-			"headers": "Accept: application/json\nContent-Type: application/json\n",
-			"url": "http://{{hostname}}:{{port}}/widgets",
-			"preRequestScript": null,
-			"pathVariables": {},
-			"method": "POST",
-			"data": [],
-			"dataMode": "raw",
-			"version": 2,
-			"tests": "",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1465051570209,
-			"name": "localhost:3000/widgets (POST NEW)",
-			"description": "",
-			"collectionId": "b0554bde-d0fe-448d-3203-4bbb95e54c96",
-			"responses": [],
-			"rawModeData": "{\n\t\"product_id\": \"N212QZOD9B\",\n\t\"name\": \"Pentwist\",\n\t\"color\": \"Yellow\",\n\t\"size\": \"Huge\",\n\t\"price\": \"$159.98\",\n\t\"inventory\": 95\n}"
-		},
-		{
-			"id": "e0154dd5-892a-6673-5872-615afc8f36de",
-			"headers": "Accept: application/json\n",
-			"url": "http://{{hostname}}:{{port}}/widgets",
-			"preRequestScript": null,
-			"pathVariables": {},
-			"method": "GET",
-			"data": [],
-			"dataMode": "params",
-			"version": 2,
-			"tests": "",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1464810772154,
 			"name": "localhost:3000/widgets (GET ALL)",
-			"description": "",
-			"collectionId": "b0554bde-d0fe-448d-3203-4bbb95e54c96",
-			"responses": []
+			"request": {
+				"url": "http://{{hostname}}:{{port}}/widgets",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/widgets/N212QZOD9B (GET ONE)",
+			"request": {
+				"url": "http://{{hostname}}:{{port}}/widgets/N212QZOD9B",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/widgets/N212QZOD9B (DELETE)",
+			"request": {
+				"url": "http://{{hostname}}:{{port}}/widgets/N212QZOD9B",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/widgets (POST NEW)",
+			"request": {
+				"url": "http://{{hostname}}:{{port}}/widgets",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"product_id\": \"N212QZOD9B\",\n\t\"name\": \"Pentwist\",\n\t\"color\": \"Yellow\",\n\t\"size\": \"Huge\",\n\t\"price\": \"$159.98\",\n\t\"inventory\": 95\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/widgets (PUT)",
+			"request": {
+				"url": "http://{{hostname}}:{{port}}/widgets",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"product_id\": \"N212QZOD9B\",\n\t\"name\": \"Pentwist\",\n\t\"color\": \"Yellow\",\n\t\"size\": \"Huge\",\n\t\"price\": \"$169.98\",\n\t\"inventory\": 91\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/utils/ping",
+			"request": {
+				"url": "http://{{hostname}}:{{port}}/utils/ping",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "text/plain",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/utils/health",
+			"request": {
+				"url": "http://{{hostname}}:{{port}}/utils/health",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/utils/info",
+			"request": {
+				"url": "http://{{hostname}}:{{port}}/utils/info",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/utils/config",
+			"request": {
+				"url": "http://{{hostname}}:{{port}}/utils/config",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/utils/env",
+			"request": {
+				"url": "http://{{hostname}}:{{port}}/utils/env",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
 		}
 	]
 }

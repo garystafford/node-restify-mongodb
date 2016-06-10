@@ -132,5 +132,6 @@ http://stackoverflow.com/questions/15123182/mongoose-findoneandupdate-not-workin
 http://support.mashery.com/docs/read/mashery_api/30/Pagination  
 https://semaphoreci.com/community/tutorials/getting-started-with-node-js-and-jasmine  
 https://github.com/mhevery/jasmine-node/blob/master/package.json  
-http://stackoverflow.com/a/20730416/580268
+http://stackoverflow.com/a/20730416/580268  
+http://tools.ietf.org/html/rfc7231#section-4.3  
 

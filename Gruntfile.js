@@ -19,7 +19,7 @@ module.exports = function (grunt) {
         cmd: 'node_modules/jshint/bin/jshint --verbose app/ config/ app.js *.js'
       },
       jasmine_test: {
-        cmd: 'node node_modules/jasmine-node/lib/jasmine-node/cli.js --color --verbose --captureExceptions spec'
+        cmd: 'node node_modules/jasmine-node/lib/jasmine-node/cli.js --color --verbose --captureExceptions --forceexit spec'
       }
     }
   });

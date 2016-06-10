@@ -54,6 +54,7 @@ Download and Install the project from GitHub
 git clone https://github.com/garystafford/node-restify-mongodb.git
 cd node-restify-mongodb
 npm install
+jasmine init
 ```
 
 Populate MongoDB with sample widgets

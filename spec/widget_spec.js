@@ -14,12 +14,9 @@ widget_model();
 
 var Widget = mongoose.model('Widget');
 
-describe('Widget  Endpoints', function () {
-});
-
 // http://rob.conery.io/2012/02/25/testing-your-model-with-mocha-mongo-and-nodejs/
 function saveWidget(widget, done) {
-  widget.save(function (err) {
+  widget.save(function (err, widget, numAffected) {
     if (err) {
       return err;
     } else {
@@ -38,55 +35,52 @@ function removeWidgets(options, done) {
   });
 }
 
-describe('Widget CRUD Endpoints', function () {
+describe('Test Widget CRUD Endpoints', function () {
   beforeEach(function (done) {
     removeWidgets({}, done);
 
-    var widget = new Widget();
-    widget.product_id = 'F219QZDKLB';
-    widget.name = 'TestWidget1';
-    widget.color = 'White';
-    widget.size = 'Medium';
-    widget.price = '$99.99';
-    widget.inventory = 27;
-    saveWidget(widget, done)
+    var widget1 = new Widget();
+    widget1.product_id = 'F219QZDKLB';
+    widget1.name = 'TestWidget1';
+    widget1.color = 'White';
+    widget1.size = 'Medium';
+    widget1.price = '$99.99';
+    widget1.inventory = 27;
+    saveWidget(widget1, done);
 
-    widget.product_id = 'JF23H4J0C2';
-    widget.name = 'TestWidget2';
-    widget.color = 'Ref';
-    widget.size = 'Huge';
-    widget.price = '$127.95';
-    widget.inventory = 104;
-    saveWidget(widget, done)
+    var widget2 = new Widget();
+    widget2.product_id = 'JF23H4J0C2';
+    widget2.name = 'TestWidget2';
+    widget2.color = 'Red';
+    widget2.size = 'Huge';
+    widget2.price = '$127.95';
+    widget2.inventory = 104;
+    saveWidget(widget2, done);
   });
 
   afterEach(function (done) {
     removeWidgets({}, done);
   });
-
-  describe('Call GET /widgets', function () {
-    it('returns status code of 200', function (done) {
-      request.get(base_url + '/widgets', function (error, response, body) {
-        expect(response.statusCode).toBe(200);
-        done();
-      });
+  
+  it('GET /widgets returns status code of 200', function (done) {
+    request.get(base_url + '/widgets', function (error, response, body) {
+      expect(response.statusCode).toBe(200);
+      done();
     });
   });
 
-  describe('Call GET /widgets/:product_id', function () {
-    it('returns expected \'name\' value', function (done) {
-      var conditions = {'product_id': 'F219QZDKLB'};
-      var projection = {};
-      var options = {};
+  it('GET /widgets/:product_id returns expected value for \'name\' field', function (done) {
+    var conditions = {'product_id': 'F219QZDKLB'};
+    var projection = {};
+    var options = {};
 
-      Widget.findOne(conditions, projection, options, function (err, widget) {
-        if (err) {
-          return err;
-        } else {
-          expect(widget.name).toBe('Testwidget1');
-          done();
-        }
-      });
+    Widget.findOne(conditions, projection, options, function (err, doc) {
+      if (err) {
+        return err;
+      } else {
+        expect(doc.name).toBe('TestWidget1');
+        done();
+      }
     });
   });
 });

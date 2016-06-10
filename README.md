@@ -54,7 +54,6 @@ Download and Install the project from GitHub
 git clone https://github.com/garystafford/node-restify-mongodb.git
 cd node-restify-mongodb
 npm install
-jasmine init
 ```
 
 Populate MongoDB with sample widgets
@@ -118,8 +117,9 @@ db.widgets.find()
 ```
 
 #### TODO
-* ~~Add Jasmine tests for new Utility endpoints~~
-* Add Jasmine tests for Widget endpoints
+* ~~Add jasmine-node tests for new Utility endpoints~~
+* Add jasmine-node tests for Widget endpoints
+* Convert from out-dated jasmine-node to jasmine
 * Add ability to read query params
 * Add filtering, sorting, field selection and paging
 * Add HATEOAS features

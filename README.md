@@ -37,7 +37,7 @@ server.get({path: PATH + '/env', version: VERSION}, environment);
 ```
 
 #### Widget
-The 'widget' object is used to demonstrate mongoose.js model and schema. The widget's structure looks like:
+The 'widget' is used to demonstrate Mongoose's Model and Schema. The widget's basic object structure looks like:
 ```json
 {
   "product_id": "4OZNPBMIDR",

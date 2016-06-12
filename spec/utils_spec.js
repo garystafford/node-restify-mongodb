@@ -5,7 +5,7 @@ var path = require('path');
 var config = require(path.join(__dirname, '../config/config'));
 var base_url = ''.concat('http://', config.app.address, ':', config.app.port);
 
-describe('Utility Endpoints', function () {
+describe('Utility URIs', function () {
   describe('GET /utils/ping', function () {
     var url = base_url + '/utils/ping';
 

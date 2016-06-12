@@ -41,7 +41,7 @@ function removeWidgets(options, done) {
 
 //////////// Tests ///////////////////////
 
-describe('Widget Endpoints', function () {
+describe('Widget URIs', function () {
   describe('GET /widgets', function () {
     beforeEach(function (done) {
       removeWidgets({}, done);

@@ -3,7 +3,7 @@ var path = require('path');
 var rootPath = path.normalize(__dirname + '/..');
 
 var ENV = process.env.NODE_ENV || 'development';
-var LEVEL = process.env.LOG_LEVEL || 'trace';
+var LEVEL = process.env.LOG_LEVEL || 'info';
 var HOST = process.env.NODE_HOST || '127.0.0.1';
 var PORT = process.env.NODE_PORT || 3000;
 var MONGO_PORT = process.env.MONGO_PORT || 27017;
@@ -21,7 +21,7 @@ var config = {
     db: {
       host: HOST,
       port: MONGO_PORT,
-      name: appName + ENV.toLowerCase(),
+      name: appName + ENV.toLowerCase()
     },
     log: {
       name: appName + ENV.toLowerCase(),
@@ -38,7 +38,7 @@ var config = {
     db: {
       host: HOST,
       port: MONGO_PORT,
-      name: appName + ENV.toLowerCase(),
+      name: appName + ENV.toLowerCase()
     },
     log: {
       name: appName + ENV.toLowerCase(),
@@ -55,7 +55,7 @@ var config = {
     db: {
       host: HOST,
       port: MONGO_PORT,
-      name: appName + ENV.toLowerCase(),
+      name: appName + ENV.toLowerCase()
     },
     log: {
       name: appName + ENV.toLowerCase(),

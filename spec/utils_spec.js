@@ -4,7 +4,7 @@ var path = require('path');
 var config = require(path.join(__dirname, '../config/config'));
 var base_url = ''.concat('http://', config.app.address, ':', config.app.port);
 
-describe('Widget Utility Endpoints', function () {
+describe('Utility Endpoints', function () {
   describe('GET /utils/ping', function () {
     it('returns status code of 200', function (done) {
       request.get(base_url + '/utils/ping', function (error, response, body) {

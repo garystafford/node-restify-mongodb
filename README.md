@@ -12,8 +12,9 @@ The structure of the project, and a portion of the code is derived from, what I 
 * [generator-restify](https://github.com/chris-l/generator-restify)  
 * [generator-express](https://github.com/expressjs/generator)  
 
-Along with Node, Restify, and MongoDB, the project also implements [Bunyan](https://github.com/trentm/node-bunyan)
- (include [DTrace](http://dtrace.org/blogs/about/) support), [Jasmine](https://github.com/mhevery/jasmine-node),
+Along with Node, Restify, and MongoDB, the project also implements the following: [Bunyan](https://github.com/trentm/node-bunyan)
+ (includes [DTrace](http://dtrace.org/blogs/about/) support), [Jasmine](https://github.com/mhevery/jasmine-node)
+ (using [jasmine-node](https://github.com/mhevery/jasmine-node)),
  [Mongoose](http://mongoosejs.com/index.html), and [Grunt](http://gruntjs.com).
 
 #### API Endpoints
@@ -118,8 +119,8 @@ db.widgets.find()
 
 #### TODO
 * ~~Add jasmine-node tests for new Utility endpoints~~
-* Add jasmine-node tests for Widget endpoints
-* Convert from out-dated jasmine-node to jasmine
+* ~~Add jasmine-node tests for Widget endpoints~~
+* Convert from out-dated jasmine-node to jasmine?
 * Add ability to read query params
 * Add filtering, sorting, field selection and paging
 * Add HATEOAS features

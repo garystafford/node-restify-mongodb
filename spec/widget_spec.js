@@ -14,11 +14,13 @@ widget_model();
 
 var Widget = mongoose.model('Widget');
 
+var log = require(path.join(__dirname, '../log'));
+
 // http://rob.conery.io/2012/02/25/testing-your-model-with-mocha-mongo-and-nodejs/
 function saveWidget(widget, done) {
-  widget.save(function (err, widget, numAffected) {
+  widget.save(function (err) {
     if (err) {
-      return err;
+      log.error(err);
     } else {
       done();
     }
@@ -28,7 +30,7 @@ function saveWidget(widget, done) {
 function removeWidgets(options, done) {
   Widget.remove(options, function (err) {
     if (err) {
-      return err;
+      log.error(err);
     } else {
       done();
     }
@@ -61,7 +63,7 @@ describe('Test Widget CRUD Endpoints', function () {
   afterEach(function (done) {
     removeWidgets({}, done);
   });
-  
+
   it('GET /widgets returns status code of 200', function (done) {
     request.get(base_url + '/widgets', function (error, response, body) {
       expect(response.statusCode).toBe(200);

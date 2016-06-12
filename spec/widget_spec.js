@@ -15,6 +15,7 @@ var Widget = mongoose.model('Widget');
 
 var log = require(path.join(__dirname, '../log'));
 
+
 //////////// Helper Functions ////////////
 
 function saveWidget(widget, done) {
@@ -36,6 +37,7 @@ function removeWidgets(options, done) {
     }
   });
 }
+
 
 //////////// Tests ///////////////////////
 
@@ -100,6 +102,13 @@ describe('Widget Endpoints', function () {
         done();
       });
     });
+
+    it('returns \'x-total-count\' header with value of \'3\'', function (done) {
+      request(options, function (error, response, body) {
+        response.headers.should.have.a.property('x-total-count', '3');
+        done();
+      });
+    });
   });
 
   describe('GET /widgets/:product_id', function () {
@@ -154,7 +163,7 @@ describe('Widget Endpoints', function () {
       });
     });
 
-    it('returns widget with expected value for \'name\' key', function (done) {
+    it('returns widget with \'TestWidget_4YFZH127BX\' value for \'name\' key', function (done) {
       request(options, function (error, response, body) {
         var widget = JSON.parse(body);
         widget.should.have.a.property('name', 'TestWidget_4YFZH127BX');

@@ -4,10 +4,10 @@ var path = require('path');
 var config = require(path.join(__dirname, '../../config/config'));
 var Widget = mongoose.model('Widget');
 
-module.exports = function (server) {
-  var PATH = '/widgets';
-  var VERSION = '1.0.0';
+var PATH = '/widgets';
+var VERSION = '1.0.0';
 
+module.exports = function (server) {
   server.get({path: PATH, version: VERSION}, findDocuments);
   server.get({path: PATH + '/:product_id', version: VERSION}, findOneDocument);
   server.post({path: PATH, version: VERSION}, createDocument);
@@ -48,13 +48,14 @@ module.exports = function (server) {
   }
 
   function createDocument(req, res, next) {
-    var widget = new Widget();
-    widget.product_id = req.params.product_id;
-    widget.name = req.params.name;
-    widget.color = req.params.color;
-    widget.size = req.params.size;
-    widget.price = req.params.price;
-    widget.inventory = req.params.inventory;
+    var widget = new Widget({
+      product_id: req.params.product_id,
+      name: req.params.name,
+      color: req.params.color,
+      size: req.params.size,
+      price: req.params.price,
+      inventory: req.params.inventory
+    });
 
     // http://mongoosejs.com/docs/api.html#model_Model-save
     widget.save(function (err, widget, numAffected) {

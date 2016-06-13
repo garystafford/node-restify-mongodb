@@ -22,6 +22,7 @@ module.exports = function (server) {
     return next();
   }
 
+  // Can be found with env URI
   function information(req, res, next) {
     var app_info = {
       name: process.env.npm_package_name,

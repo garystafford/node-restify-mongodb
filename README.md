@@ -37,7 +37,8 @@ server.get({path: PATH + '/env', version: VERSION}, environment);
 ```
 
 #### Widget
-The basic 'widget' object is used throughout, to demonstrate Mongoose's Model and Schema
+The basic 'widget' object is used throughout, to demonstrate Mongoose's
+ [Model](http://mongoosejs.com/docs/models.html) and [Schema](http://mongoosejs.com/docs/guide.html)
 ```json
 {
   "product_id": "4OZNPBMIDR",

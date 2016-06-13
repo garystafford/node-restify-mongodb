@@ -19,7 +19,7 @@ Along with Node, Restify, and MongoDB, the project also implements the following
 
 #### API Endpoints
 ```javascript
-# basic CRUD resources
+# widget resources
 var PATH = '/widgets';
 server.get({path: PATH, version: VERSION}, findDocuments);
 server.get({path: PATH + '/:product_id', version: VERSION}, findOneDocument);
@@ -136,4 +136,3 @@ https://semaphoreci.com/community/tutorials/getting-started-with-node-js-and-jas
 https://github.com/mhevery/jasmine-node/blob/master/package.json  
 http://stackoverflow.com/a/20730416/580268  
 http://tools.ietf.org/html/rfc7231#section-4.3  
-

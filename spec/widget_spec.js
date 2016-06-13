@@ -1,3 +1,6 @@
+/*jslint node: true */
+'use strict';
+
 //////////// VARIABLES ///////////////////
 
 var request = require('request');
@@ -389,9 +392,9 @@ describe('Widget URIs', function () {
       removeWidgets({}, done);
     });
 
-    url2 = base_url + '/widgets/ZC7DV7BSPE';
+    var url2 = base_url + '/widgets/ZC7DV7BSPE';
 
-    options2 = {
+    var options2 = {
       method: 'GET',
       url: url2,
       headers: {

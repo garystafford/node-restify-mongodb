@@ -1,3 +1,6 @@
+/*jslint node: true */
+'use strict';
+
 var bunyan = require('bunyan');
 var path = require('path');
 

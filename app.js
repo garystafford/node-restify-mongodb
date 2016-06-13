@@ -1,5 +1,6 @@
-/*jslint node: true, indent: 2 */
+/*jslint node: true */
 'use strict';
+
 var restify = require('restify');
 var path = require('path');
 

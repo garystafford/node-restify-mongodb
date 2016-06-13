@@ -1,3 +1,6 @@
+/*jslint node: true */
+'use strict';
+
 var mongoose = require('mongoose');
 require('mongoose-currency').loadType(mongoose);
 var uniqueValidator = require('mongoose-unique-validator');

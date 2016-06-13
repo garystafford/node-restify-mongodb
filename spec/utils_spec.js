@@ -1,3 +1,6 @@
+/*jslint node: true */
+'use strict';
+
 //////////// VARIABLES ///////////////////
 
 var request = require('request');

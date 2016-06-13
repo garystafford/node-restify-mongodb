@@ -1,67 +1,70 @@
+/*jslint node: true */
+'use strict';
+
 var path = require('path');
 
 var rootPath = path.normalize(__dirname + '/..');
 
-var ENV = process.env.NODE_ENV || 'development';
-var LEVEL = process.env.LOG_LEVEL || 'info';
-var HOST = process.env.NODE_HOST || '127.0.0.1';
-var PORT = process.env.NODE_PORT || 3000;
+var NODE_ENV = process.env.NODE_ENV || 'development';
+var NODE_HOST = process.env.NODE_HOST || '127.0.0.1';
+var NODE_PORT = process.env.NODE_PORT || 3000;
 var MONGO_PORT = process.env.MONGO_PORT || 27017;
+var LOG_LEVEL = process.env.LOG_LEVEL || 'info';
 
-var appName = 'node-restify-mongodb-';
+var APP_NAME = 'node-restify-mongodb-';
 
 var config = {
   development: {
     root: rootPath,
     app: {
-      name: appName + ENV.toLowerCase(),
-      address: HOST,
-      port: PORT
+      name: APP_NAME + NODE_ENV,
+      address: NODE_HOST,
+      port: NODE_PORT
     },
     db: {
-      host: HOST,
+      host: NODE_HOST,
       port: MONGO_PORT,
-      name: appName + ENV.toLowerCase()
+      name: APP_NAME + NODE_ENV
     },
     log: {
-      name: appName + ENV.toLowerCase(),
-      level: LEVEL
+      name: APP_NAME + NODE_ENV,
+      level: LOG_LEVEL
     }
   },
   test: {
     root: rootPath,
     app: {
-      name: appName + ENV.toLowerCase(),
-      address: HOST,
-      port: PORT
+      name: APP_NAME + NODE_ENV,
+      address: NODE_HOST,
+      port: NODE_PORT
     },
     db: {
-      host: HOST,
+      host: NODE_HOST,
       port: MONGO_PORT,
-      name: appName + ENV.toLowerCase()
+      name: APP_NAME + NODE_ENV
     },
     log: {
-      name: appName + ENV.toLowerCase(),
-      level: LEVEL
+      name: APP_NAME + NODE_ENV,
+      level: LOG_LEVEL
     }
   },
   production: {
     root: rootPath,
     app: {
-      name: appName + ENV.toLowerCase(),
-      address: HOST,
-      port: PORT
+      name: APP_NAME + NODE_ENV,
+      address: NODE_HOST,
+      port: NODE_PORT
     },
     db: {
-      host: HOST,
+      host: NODE_HOST,
       port: MONGO_PORT,
-      name: appName + ENV.toLowerCase()
+      name: APP_NAME + NODE_ENV
     },
     log: {
-      name: appName + ENV.toLowerCase(),
-      level: LEVEL
+      name: APP_NAME + NODE_ENV,
+      level: LOG_LEVEL
     }
   }
 };
 
-module.exports = config[ENV];
+module.exports = config[NODE_ENV];

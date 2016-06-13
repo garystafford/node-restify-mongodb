@@ -1,3 +1,6 @@
+/*jslint node: true */
+'use strict';
+
 var mongoose = require('mongoose');
 var path = require('path');
 
@@ -20,9 +23,9 @@ module.exports = function (server) {
     var projection = {};
     var options = {};
 
-    Widget.find(conditions, projection, options).sort({'name': 1}).exec(function (err, widgets) {
-      if (err) {
-        return next(err);
+    Widget.find(conditions, projection, options).sort({'name': 1}).exec(function (error, widgets) {
+      if (error) {
+        return next(error);
       } else {
         res.header('X-Total-Count', widgets.length);
         res.send(200, widgets);
@@ -37,9 +40,9 @@ module.exports = function (server) {
     var projection = {};
     var options = {};
 
-    Widget.findOne(conditions, projection, options, function (err, widget) {
-      if (err) {
-        return next(err);
+    Widget.findOne(conditions, projection, options, function (error, widget) {
+      if (error) {
+        return next(error);
       } else {
         res.send(200, widget);
         return next();
@@ -58,9 +61,9 @@ module.exports = function (server) {
     });
 
     // http://mongoosejs.com/docs/api.html#model_Model-save
-    widget.save(function (err, widget, numAffected) {
-      if (err) {
-        return next(err);
+    widget.save(function (error, widget, numAffected) {
+      if (error) {
+        return next(error);
       } else {
         res.send(201, widget);
         return next();
@@ -80,9 +83,9 @@ module.exports = function (server) {
     };
     var options = {runValidators: true, context: 'query'};
 
-    Widget.findOneAndUpdate(conditions, update, options, function (err) {
-      if (err) {
-        return next(err);
+    Widget.findOneAndUpdate(conditions, update, options, function (error) {
+      if (error) {
+        return next(error);
       } else {
         res.send(200);
         return next();
@@ -94,9 +97,9 @@ module.exports = function (server) {
     // http://mongoosejs.com/docs/api.html#query_Query-remove
     var options = {'product_id': req.params.product_id};
 
-    Widget.remove(options, function (err) {
-      if (err) {
-        return next(err);
+    Widget.remove(options, function (error) {
+      if (error) {
+        return next(error);
       } else {
         res.send(204);
         return next();

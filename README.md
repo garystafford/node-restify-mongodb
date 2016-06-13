@@ -51,7 +51,7 @@ The basic 'widget' object is used throughout, to demonstrate Mongoose's
 ```
 
 #### Commands
-Download and Install the project from GitHub
+Download and Install the project from [GitHub](https://github.com/garystafford/node-restify-mongodb)
 ```bash
 git clone https://github.com/garystafford/node-restify-mongodb.git
 cd node-restify-mongodb

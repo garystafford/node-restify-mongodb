@@ -6,7 +6,7 @@ A basic, RESTful CRUD API example, based on [Node](https://nodejs.org), [Restify
  borrows heavily from [Express](http://expressjs.com), according to the Restify website. However, while Express is targeted at browser
  applications, with templating and rendering, Restify is focused on building API services that are maintainable and observable.         
 
-The structure of the project, and a portion of the code is derived from, what I consider, the best parts of three different
+The structure of the project and a portion of the code is derived from, what I consider, the best parts of three different:
  [Yeoman generators](http://yeoman.io/generators/)  
 * [generator-restify-mongo](https://github.com/lawrence-yu/generator-restify-mongo)  
 * [generator-restify](https://github.com/chris-l/generator-restify)  

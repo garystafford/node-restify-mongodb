@@ -6,6 +6,7 @@ module.exports = function (grunt) {
       options: {
         db: config.db.name,
         host: config.db.host,
+        port: config.db.port,
         collections: [{
           name: 'widgets',
           file: 'data/widgets.json',

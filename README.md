@@ -1,12 +1,12 @@
 ## Node-Restify-MongoDB RESTful API Example
 
 #### Introduction
-A basic, RESTful CRUD API example, based on [Node](https://nodejs.org), [Restify](http://restify.com),
+A basic RESTful CRUD API, based on [Node](https://nodejs.org), [Restify](http://restify.com),
  and [MongoDB](https://www.mongodb.com). Restify, used, notably, by [Netflix](http://techblog.netflix.com/2014/11/nodejs-in-flames.html),
  borrows heavily from [Express](http://expressjs.com), according to the Restify website. However, while Express is targeted at browser
  applications, with templating and rendering, Restify is focused on building API services that are maintainable and observable.         
 
-The structure of the project and a portion of the code is derived from, what I consider, the best parts of three different:
+The structure of the project and a portion of the code is derived from what I personally consider the best parts of three different
  [Yeoman generators](http://yeoman.io/generators/)  
 * [generator-restify-mongo](https://github.com/lawrence-yu/generator-restify-mongo)  
 * [generator-restify](https://github.com/chris-l/generator-restify)  

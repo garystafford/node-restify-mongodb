@@ -118,6 +118,13 @@ db.widgets.find()
   { "_id" : ObjectId("574cf9bb0f515d7c67a8702f"), "product_id" : "GKO1SFX04M", "name" : "Jukelox", "color" : "Blue", "size" : "Small", "price" : "$25.49", "inventory" : 75 }
 ```
 
+Keep the project's npm packages up-to-date
+``` bash
+npm install david -g
+david
+david update 
+```
+
 #### TODO
 * ~~Add jasmine-node tests for new Utility endpoints~~
 * ~~Add jasmine-node tests for Widget endpoints~~
@@ -125,6 +132,7 @@ db.widgets.find()
 * Add ability to read query params
 * Add filtering, sorting, field selection and paging
 * Add HATEOAS features
+* Add authentication and authorization to production MongoDB instance
 
 
 #### References

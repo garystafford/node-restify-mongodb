@@ -134,7 +134,7 @@ var LOG_LEVEL  = process.env.LOG_LEVEL  || 'info';
 var APP_NAME   = 'node-restify-mongodb-';
 ```
 
-#### TODO
+## TODO
 * ~~Add jasmine-node tests for new Utility endpoints~~
 * ~~Add jasmine-node tests for Widget endpoints~~
 * Convert from out-dated jasmine-node to jasmine?
@@ -144,7 +144,7 @@ var APP_NAME   = 'node-restify-mongodb-';
 * Add authentication and authorization to production MongoDB instance
 
 
-#### References
+## References
 http://blog.mwaysolutions.com/2014/06/05/10-best-practices-for-better-restful-api  
 https://blog.openshift.com/day-27-restify-build-correct-rest-web-services-in-nodejs  
 https://scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications  

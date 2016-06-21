@@ -1,24 +1,76 @@
-## Node-Restify-MongoDB RESTful API Example
+## Node-Restify-MongoDB Generated RESTful API
 
-#### Introduction
-A basic RESTful CRUD API, based on [Node](https://nodejs.org), [Restify](http://restify.com),
- and [MongoDB](https://www.mongodb.com). Restify, used, notably, by [Netflix](http://techblog.netflix.com/2014/11/nodejs-in-flames.html),
+## Introduction
+This project was built using the [generator-node-restify-mongodb](https://www.npmjs.com/package/generator-node-restify-mongodb)
+ [Yeoman generator](http://yeoman.io/generators/). The generator scaffolds a basic RESTful CRUD API, based on [Node](https://nodejs.org), [Restify](http://restify.com),
+ and [MongoDB](https://www.mongodb.com). Restify, used most notably by [Netflix](http://techblog.netflix.com/2014/11/nodejs-in-flames.html),
  borrows heavily from [Express](http://expressjs.com), according to the Restify website. However, while Express is targeted at browser
- applications, with templating and rendering, Restify is focused on building API services that are maintainable and observable.         
+ applications, with templating and rendering, Restify is keenly focused on building API services that are maintainable and observable.         
 
-The structure of the project and a portion of the code is derived from what I personally consider the best parts of three different
- [Yeoman generators](http://yeoman.io/generators/)  
-* [generator-restify-mongo](https://github.com/lawrence-yu/generator-restify-mongo)  
-* [generator-restify](https://github.com/chris-l/generator-restify)  
-* [generator-express](https://github.com/expressjs/generator)  
+Portions of this project's file structure and code are derived from what I consider the best parts of several different
+ projects, including [generator-express](https://github.com/expressjs/generator),
+ [generator-restify-mongo](https://github.com/lawrence-yu/generator-restify-mongo), and
+ [generator-restify](https://github.com/chris-l/generator-restify).
 
-Along with Node, Restify, and MongoDB, the project also implements the following: [Bunyan](https://github.com/trentm/node-bunyan)
+Along with Node, Restify, and MongoDB, the project also implements the following packages: [Bunyan](https://github.com/trentm/node-bunyan)
  (includes [DTrace](http://dtrace.org/blogs/about/) support), [Jasmine](https://github.com/mhevery/jasmine-node)
  (using [jasmine-node](https://github.com/mhevery/jasmine-node)),
  [Mongoose](http://mongoosejs.com/index.html), and [Grunt](http://gruntjs.com).
 
+## Installation
+First, install [Yeoman](http://yeoman.io) and generator-node-restify-mongodb using [npm](https://www.npmjs.com/)
+ (we assume you have pre-installed [node.js](https://nodejs.org/)).
+``` bash
+npm install -g yo
+npm install -g generator-node-restify-mongodb
+```
+
+Then generate your new project
+``` bash
+yo node-restify-mongodb
+```
+
+## Using the Generated Application
+Import sample widget documents into MongoDB from the supplied 'data/widgets.json' file
+``` bash
+# import to local development environment
+grunt mongoimport --verbose
+  
+# import to production environment db instance
+NODE_ENV=production grunt mongoimport --verbose
+```
+
+Start the application
+``` bash
+npm run
+```
+
+To test the application using jshint and jasmine-node, the sample documents must be imported into MongoDB (see above), and the application must be running (see above)
+``` bash
+npm test
+```
+
+Similarly, to review code coverage, using grunt, mocha, istanbul, and grunt-mocha-istanbul
+``` bash
+grunt coverage
+```
+
+
+
+Test the running application by cURLing the '/widgets' endpoint
+``` bash
+curl -X GET -H "Accept: application/json" "http://localhost:3000/widgets"
+```
+For a better output, try
+``` bash
+npm install -g json
+curl -X GET -H "Accept: application/json" "http://localhost:3000/widgets" --silent | json
+curl -X GET -H "Accept: application/json" "http://localhost:3000/widgets/SVHXPAWEOD" --silent | json
+```
+
 #### API Endpoints
-```javascript
+The current API endpoints, include the following
+``` javascript
 # widget resources
 var PATH = '/widgets';
 server.get({path: PATH, version: VERSION}, findDocuments);
@@ -39,7 +91,7 @@ server.get({path: PATH + '/env', version: VERSION}, environment);
 #### Widget
 The basic 'widget' object is used throughout, to demonstrate Mongoose's
  [Model](http://mongoosejs.com/docs/models.html) and [Schema](http://mongoosejs.com/docs/guide.html)
-```json
+``` json
 {
   "product_id": "4OZNPBMIDR",
   "name": "Fapster",
@@ -50,63 +102,14 @@ The basic 'widget' object is used throughout, to demonstrate Mongoose's
 }
 ```
 
-#### Commands
-Download and Install the project from [GitHub](https://github.com/garystafford/node-restify-mongodb)
-```bash
-git clone https://github.com/garystafford/node-restify-mongodb.git
-cd node-restify-mongodb
-npm install
+#### MongoDB
+To access the application's MongoDB database with sample documents
 ```
-
-Populate MongoDB with sample widgets
-```bash
-grunt mongoimport
-  Running "mongoimport" task
-  2016-06-04T01:09:28.483-0400	connected to: 127.0.0.1
-  2016-06-04T01:09:28.484-0400	dropping: node-restify-mongodb-development.widgets
-  2016-06-04T01:09:28.553-0400	imported 10 documents
-  Done.
-  Process finished with exit code 0
-```
-
-Start the application
-```bash
-npm run
-```
-
-Test application with jshint and jasmine-node  
-Note, application must be running for Jasmine tests
-```bash
-npm test
-grunt coverage
-```
-
-Grunt tasks
-```
-# grunt task for importing data into mongodb
-grunt mongoimport
-
-# alias for "mongoimport", "exec:jshint_test", "exec:jasmine_test" tasks
-grunt
-
-# alias for "exec:jshint_test", "exec:jasmine_test" tasks
-grunt test 
-```
-
-MongoDB
-```mongo
 mongo
-  MongoDB shell version: 3.0.7
-  connecting to: test
-  
-use node-restify-mongodb-development
-  switched to db node-restify-mongodb-development
-  
-show tables
-  system.indexes
-  widgets
-  
-db.widgets.find()
+ > show dbs
+ > use node-restify-mongodb-development
+ > show tables
+ > db.widgets.find()
   { "_id" : ObjectId("574cf9bb0f515d7c67a87026"), "product_id" : "4OZNPBMIDR", "name" : "Fapster", "color" : "Orange", "size" : "Medium", "price" : "29.99", "inventory" : 5 }
   { "_id" : ObjectId("574cf9bb0f515d7c67a87027"), "product_id" : "SVHXPAWEOD", "name" : "Voonex", "color" : "Green", "size" : "Medium", "price" : "$10.99", "inventory" : 50 }
   { "_id" : ObjectId("574cf9bb0f515d7c67a87028"), "product_id" : "3YIRGZ6TDW", "name" : "Groopster", "color" : "Yellow", "size" : "Large", "price" : "$99.95", "inventory" : 100 }
@@ -117,6 +120,18 @@ db.widgets.find()
   { "_id" : ObjectId("574cf9bb0f515d7c67a8702d"), "product_id" : "N212QZOD9B", "name" : "Pentwist", "color" : "Yellow", "size" : "Huge", "price" : "$159.98", "inventory" : 95 }
   { "_id" : ObjectId("574cf9bb0f515d7c67a8702e"), "product_id" : "RTHGP1FCGN", "name" : "Reflupper", "color" : "Red", "size" : "Large", "price" : "$12.95", "inventory" : 25 }
   { "_id" : ObjectId("574cf9bb0f515d7c67a8702f"), "product_id" : "GKO1SFX04M", "name" : "Jukelox", "color" : "Blue", "size" : "Small", "price" : "$25.49", "inventory" : 75 }
+```
+
+#### Environmental Variables
+The application uses the following environment variables and defaults, which are found in the 'config/config.js' file.
+``` javascript
+var NODE_ENV   = process.env.NODE_ENV   || 'development';
+var NODE_HOST  = process.env.NODE_HOST  || '127.0.0.1';
+var NODE_PORT  = process.env.NODE_PORT  || 3000;
+var MONGO_HOST = process.env.MONGO_HOST || '127.0.0.1';
+var MONGO_PORT = process.env.MONGO_PORT || 27017;
+var LOG_LEVEL  = process.env.LOG_LEVEL  || 'info';
+var APP_NAME   = 'node-restify-mongodb-';
 ```
 
 Keep the project's npm packages up-to-date

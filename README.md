@@ -134,13 +134,6 @@ var LOG_LEVEL  = process.env.LOG_LEVEL  || 'info';
 var APP_NAME   = 'node-restify-mongodb-';
 ```
 
-Keep the project's npm packages up-to-date
-``` bash
-npm install david -g
-david
-david update 
-```
-
 #### TODO
 * ~~Add jasmine-node tests for new Utility endpoints~~
 * ~~Add jasmine-node tests for Widget endpoints~~

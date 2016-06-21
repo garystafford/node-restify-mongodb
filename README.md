@@ -78,6 +78,7 @@ Test application with jshint and jasmine-node
 Note, application must be running for Jasmine tests
 ```bash
 npm test
+grunt coverage
 ```
 
 Grunt tasks
